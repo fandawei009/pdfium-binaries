@@ -18,6 +18,9 @@ mkdir -p "$BUILD"
   echo "pdf_enable_v8 = $ENABLE_V8"
   echo "pdf_enable_xfa = $ENABLE_V8"
   echo "treat_warnings_as_errors = false"
+  
+  echo "is_component_build = false"
+  echo "pdf_is_complete_lib = false"
 
   case "$OS" in
     ios)
