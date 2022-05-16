@@ -24,7 +24,7 @@ sed "s/#VERSION#/${VERSION:-0.0.0.0}/" <"$PATCHES/PDFiumConfig.cmake" >"$STAGING
 cp "$SOURCE/LICENSE" "$STAGING"
 cp "$BUILD/args.gn" "$STAGING"
 cp -R "$SOURCE/public" "$STAGING/include"
-cp -R "$BUILD" "$STAGING_LIB"
+# cp -R "$BUILD" "$STAGING_LIB"
 rm -f "$STAGING/include/DEPS"
 rm -f "$STAGING/include/README"
 rm -f "$STAGING/include/PRESUBMIT.py"
@@ -36,6 +36,7 @@ case "$OS" in
 
   mac|ios)
     # mv "$BUILD/libpdfium.dylib" "$STAGING_LIB"
+    mv "$BUILD/obj/libpdfium.a" "$STAGING_LIB"
     ;;
 
   wasm)
