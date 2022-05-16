@@ -35,7 +35,7 @@ case "$OS" in
     ;;
 
   mac|ios)
-    mv "$BUILD/libpdfium.dylib" "$STAGING_LIB"
+    # mv "$BUILD/libpdfium.dylib" "$STAGING_LIB"
     ;;
 
   wasm)
