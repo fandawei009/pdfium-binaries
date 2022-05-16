@@ -47,9 +47,9 @@ jobs:
       - name: Checkout PDFium
         run: steps/02-checkout.sh
         shell: bash
-      - name: Apply patches
-        run: steps/03-patch.sh
-        shell: bash
+      # - name: Apply patches
+      #   run: steps/03-patch.sh
+      #   shell: bash
       - name: Install (2/2)
         run: steps/04-install-extras.sh
         shell: bash
