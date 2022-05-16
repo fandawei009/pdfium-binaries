@@ -20,6 +20,7 @@ mkdir -p "$BUILD"
   echo "treat_warnings_as_errors = false"
   
   echo 'pdf_is_complete_lib = true'
+  
   #echo "is_component_build = false"
   #echo "pdf_is_complete_lib = false"
 
@@ -28,6 +29,7 @@ mkdir -p "$BUILD"
       echo "ios_enable_code_signing = false"
       ;;
     mac)
+      echo 'extra_cflags=["-stdlib=libc++"]'
       echo 'mac_deployment_target = "10.11.0"'
       ;;
     win)
