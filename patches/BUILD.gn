@@ -1,4 +1,3 @@
-
 # Copyright 2016 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -17,8 +16,8 @@ group("freetype_common") {
 }
 
 config("pdfium_common_config") {
-  cflags = [-stdlib=libc++]
-  cflags_cc = [-stdlib=libc++]
+  cflags = ["-stdlib=libc++"]
+  cflags_cc = ["-stdlib=libc++"]
   ldflags = []
   include_dirs = [ "." ]
   defines = [
@@ -273,7 +272,7 @@ config("pdfium_public_config") {
 }
 
 config("pdfium_core_config") {
-  cflags = [-stdlib=libc++]
+  cflags = ["-stdlib=libc++"]
   configs = [
     ":pdfium_common_config",
     ":pdfium_public_config",
@@ -297,7 +296,7 @@ config("pdfium_strict_config") {
 }
 
 config("pdfium_noshorten_config") {
-  cflags = [-stdlib=libc++]
+  cflags = ["-stdlib=libc++"]
   if (is_clang) {
     cflags += [ "-Wshorten-64-to-32" ]
   }
@@ -567,4 +566,3 @@ group("pdfium_all") {
     ]
   }
 }
-
