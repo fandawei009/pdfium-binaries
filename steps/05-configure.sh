@@ -29,7 +29,7 @@ mkdir -p "$BUILD"
       echo "ios_enable_code_signing = false"
       ;;
     mac)
-      echo 'extra_cflags=["-stdlib=libc++"]'
+      # echo 'extra_cflags=["-stdlib=libc++"]'
       echo 'mac_deployment_target = "10.11.0"'
       ;;
     win)
