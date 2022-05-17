@@ -24,8 +24,22 @@ sed "s/#VERSION#/${VERSION:-0.0.0.0}/" <"$PATCHES/PDFiumConfig.cmake" >"$STAGING
 cp "$SOURCE/LICENSE" "$STAGING"
 cp "$BUILD/args.gn" "$STAGING"
 cp -R "$SOURCE/public" "$STAGING/include"
-cp -R "$SOURCE/build" "$STAGING_LIB/build"
-# cp -R "$SOURCE/third_party" "$STAGING_LIB/third_party"
+# cp -R "$SOURCE/build" "$STAGING_LIB/build"
+cp -R "$SOURCE/third_party/agg23" "$STAGING_LIB/third_party/agg23"
+# cp -R "$SOURCE/third_party/android_sdk" "$STAGING_LIB/third_party/android_sdk"
+# cp -R "$SOURCE/third_party/base" "$STAGING_LIB/third_party/base"
+# cp -R "$SOURCE/third_party/bigint" "$STAGING_LIB/third_party/bigint"
+# cp -R "$SOURCE/third_party/freetype" "$STAGING_LIB/third_party/freetype"
+# cp -R "$SOURCE/third_party/fuchsia-sdk" "$STAGING_LIB/third_party/fuchsia-sdk"
+# cp -R "$SOURCE/third_party/googletest" "$STAGING_LIB/third_party/googletest"
+# cp -R "$SOURCE/third_party/lcms" "$STAGING_LIB/third_party/lcms"
+# cp -R "$SOURCE/third_party/libopenjpeg20" "$STAGING_LIB/third_party/libopenjpeg20"
+# cp -R "$SOURCE/third_party/libpng16" "$STAGING_LIB/third_party/libpng16"
+# cp -R "$SOURCE/third_party/libtiff" "$STAGING_LIB/third_party/libtiff"
+# cp -R "$SOURCE/third_party/NotoSansCJK" "$STAGING_LIB/third_party/NotoSansCJK"
+# cp -R "$SOURCE/third_party/pymock" "$STAGING_LIB/third_party/pymock"
+# cp -R "$SOURCE/third_party/skia_shared" "$STAGING_LIB/third_party/skia_shared"
+
 rm -f "$STAGING/include/DEPS"
 rm -f "$STAGING/include/README"
 rm -f "$STAGING/include/PRESUBMIT.py"
@@ -37,7 +51,7 @@ case "$OS" in
 
   mac|ios)
     # mv "$BUILD/libpdfium.dylib" "$STAGING_LIB"
-    mv "$BUILD/obj/libpdfium.a" "$STAGING_LIB"
+    # mv "$BUILD/obj/libpdfium.a" "$STAGING_LIB"
     ;;
 
   wasm)
