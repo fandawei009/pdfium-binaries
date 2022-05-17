@@ -16,8 +16,8 @@ group("freetype_common") {
 }
 
 config("pdfium_common_config") {
-  cflags = ["-stdlib=libc++"]
-  cflags_cc = ["-stdlib=libc++"]
+  cflags = ["-stdlib=libc++", "-lc++", "-lc++abi"]
+  cflags_cc = ["-stdlib=libc++", "-lc++", "-lc++abi"]
   ldflags = []
   include_dirs = [ "." ]
   defines = [
@@ -272,7 +272,7 @@ config("pdfium_public_config") {
 }
 
 config("pdfium_core_config") {
-  cflags = ["-stdlib=libc++"]
+  cflags = ["-stdlib=libc++", "-lc++", "-lc++abi"]
   configs = [
     ":pdfium_common_config",
     ":pdfium_public_config",
@@ -296,7 +296,7 @@ config("pdfium_strict_config") {
 }
 
 config("pdfium_noshorten_config") {
-  cflags = ["-stdlib=libc++"]
+  cflags = ["-stdlib=libc++", "-lc++", "-lc++abi"]
   if (is_clang) {
     cflags += [ "-Wshorten-64-to-32" ]
   }
