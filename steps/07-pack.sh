@@ -18,6 +18,7 @@ STAGING_RES="$STAGING/res"
 
 mkdir -p "$STAGING"
 mkdir -p "$STAGING_LIB"
+mkdir -p "$STAGING_LIB/third_party"
 
 sed "s/#VERSION#/${VERSION:-0.0.0.0}/" <"$PATCHES/PDFiumConfig.cmake" >"$STAGING/PDFiumConfig.cmake"
 
@@ -25,7 +26,7 @@ cp "$SOURCE/LICENSE" "$STAGING"
 cp "$BUILD/args.gn" "$STAGING"
 cp -R "$SOURCE/public" "$STAGING/include"
 # cp -R "$SOURCE/build" "$STAGING_LIB/build"
-# cp -R "$SOURCE/third_party/agg23" "$STAGING_LIB/third_party/agg23"
+ cp -R "$SOURCE/third_party/agg23" "$STAGING_LIB/third_party/agg23"
 # cp -R "$SOURCE/third_party/android_sdk" "$STAGING_LIB/third_party/android_sdk"
 cp -R "$SOURCE/third_party/base" "$STAGING_LIB/third_party/base"
 cp -R "$SOURCE/third_party/bigint" "$STAGING_LIB/third_party/bigint"
