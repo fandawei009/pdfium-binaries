@@ -28,6 +28,7 @@ cp -R "$SOURCE/public" "$STAGING/include"
 # cp -R "$SOURCE/build" "$STAGING_LIB/build"
 cp -R "$SOURCE/BUILD.gn" "$STAGING/BUILD.gn"
 
+cp -R "$SOURCE/BUILD.gn" "$STAGING/BUILD.gn"
 
 # cp -R "$SOURCE/third_party/agg23" "$STAGING_LIB/third_party/agg23"
 # cp -R "$SOURCE/third_party/android_sdk" "$STAGING_LIB/third_party/android_sdk"
