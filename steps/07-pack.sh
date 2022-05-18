@@ -25,8 +25,9 @@ sed "s/#VERSION#/${VERSION:-0.0.0.0}/" <"$PATCHES/PDFiumConfig.cmake" >"$STAGING
 cp "$SOURCE/LICENSE" "$STAGING"
 cp "$BUILD/args.gn" "$STAGING"
 cp -R "$SOURCE/public" "$STAGING/include"
-# cp -R "$SOURCE/build" "$STAGING_LIB/build"
-# cp -R "$SOURCE/BUILD.gn" "$STAGING/BUILD.gn"
+cp -R "$SOURCE/build" "$STAGING_LIB/build"
+cp -R "$SOURCE/BUILD.gn" "$STAGING/BUILD.gn"
+cp -R "$SOURCE/third_party/abseil-cpp" "$STAGING_LIB/third_party/abseil-cpp"
 
 # cp -R "$SOURCE/constants" "$STAGING/constants"
 # cp -R "$SOURCE/core" "$STAGING/core"
